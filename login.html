@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Next National Test (NNT)</title>
+    <link rel="icon" href="./images/examlogo.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+        .hide {
+            display: none;
+        }
+
+        #reg, #log {
+            animation: formanim 0.5s linear;
+        }
+
+        @keyframes formanim {
+            from {
+                scale: 0.8;
+                opacity: 0.5;
+            }
+            to {
+                scale: 1;
+                opacity: 1;
+            }
+        }
+
+        .err {
+            color: red;
+            font-size: 13px;
+        }
+
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            background-color: #737576;
+            color: white;
+            cursor: pointer;
+            padding: 12px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #e43434;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <!-- Top Header -->
+    <div class="row bg-info t">
+        <div class="col-sm-6 text-center">
+            <i class="fa-regular fa-comments"></i>
+            Feedback | Next National Test
+        </div>
+
+        <div class="col-sm-6 text-center">
+            See also on
+            <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a> |
+            <a href="#"><i class="fa-brands fa-youtube"></i></a> |
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="row">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="index.html">
+                    <img src="./images/examlogo5.webp" alt="Logo" width="50" height="35">
+                    <span style="color:cornflowerblue;">NEXT NATIONAL TEST</span>
+                </a>
+
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-3 mb-lg-0 gap-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="fa-solid fa-house"></i> Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <i class="fa-solid fa-circle-info"></i> About us
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="showque.html">
+                                <i class="fa-solid fa-hexagon-nodes"></i> Exam Center
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <i class="fa-solid fa-address-book"></i> Contact Us
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="login.html">
+                                <i class="fa-solid fa-circle-user"></i> Login
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="row my-5 px-5" id="log">
+
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-5 d-none d-md-block p-0">
+            <div class="card h-100 rounded-0 border-0">
+                <img src="images/log.jpg" class="card-img h-100" alt="Login">
+            </div>
+        </div>
+
+        <div class="col-sm-5 bg-light p-5">
+            <div class="card border-0 bg-light h-100">
+                <div class="card-body">
+
+                    <span class="fw-bold">Login to your account</span>
+
+                    <p class="text-end">Login with</p>
+
+                    <p class="text-end">
+                        <a href="#" class="text-secondary fs-4">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-secondary fs-4">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                        <a href="#" class="text-secondary fs-4">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </p>
+
+                    <form id="loginForm">
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control"
+                                id="loginEmail" placeholder="name@example.com" required>
+                            <label for="loginEmail">
+                                <i class="fa-solid fa-square-envelope"></i>
+                                Email address
+                            </label>
+                            <span id="loginEmailError" class="err"></span>
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="password" class="form-control"
+                                id="loginPassword" placeholder="Password" required>
+                            <label for="loginPassword">
+                                <i class="fa-solid fa-lock"></i> Password
+                            </label>
+                            <span id="loginPasswordError" class="err"></span>
+                        </div>
+
+                        <br>
+
+                        <a href="#" style="text-decoration:none;">
+                            Forget Password?
+                        </a>
+
+                        <br><br>
+
+                        <div class="text-end d-grid col-6 ms-auto">
+                            <input type="submit" class="btn btn-info" value="Login">
+                        </div>
+
+                    </form>
+
+                    <div class="card-footer text-center mt-3">
+                        <small>
+                            Are you not registered?
+                            <a onclick="switchForm()"
+                                style="color:blue;cursor:pointer;">
+                                Registration
+                            </a>
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+    </div>
+
+    <!-- REGISTRATION FORM -->
+    <div class="row rounded overflow-hidden py-5"
+        id="reg" style="min-height:500px;width:95%;margin-left:2.5%;">
+
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-5 d-none d-md-block p-0">
+            <div class="card h-100 rounded-0 border-0">
+                <img src="images/reg.png" class="card-img h-100" alt="Registration">
+            </div>
+        </div>
+
+        <div class="col-sm-5 bg-light p-4 shadow">
+            <div class="card border-0 bg-light h-100">
+                <div class="card-body">
+
+                    <h3 class="card-title mb-4 pb-3 bg-info text-center"
+                        style="border-radius:5px;">
+                        Register
+                    </h3>
+
+                    <form id="registerForm">
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control"
+                                id="regName" placeholder="Full name" required>
+                            <label for="regName">
+                                <i class="fa-solid fa-user"></i> Full name
+                            </label>
+                            <span id="nameError" class="err"></span>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="mb-3">
+                            <label class="form-label">Gender:</label>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"
+                                    name="gender" id="male" value="Male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"
+                                    name="gender" id="female" value="Female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+
+                            <br>
+                            <span id="genderError" class="err"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control"
+                                id="regEmail" placeholder="Email" required>
+                            <label for="regEmail">
+                                <i class="fa-solid fa-square-envelope"></i>
+                                Email address
+                            </label>
+                            <span id="emailError" class="err"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control"
+                                id="regPassword" placeholder="Password" required>
+                            <label for="regPassword">
+                                <i class="fa-solid fa-lock"></i> Password
+                            </label>
+                            <span id="passwordError" class="err"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control"
+                                id="confirmPassword" placeholder="Confirm Password" required>
+                            <label for="confirmPassword">
+                                <i class="fa-solid fa-lock"></i> Confirm password
+                            </label>
+                            <span id="confirmError" class="err"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <input type="submit" value="Register" class="btn btn-info">
+                        </div>
+
+                    </form>
+
+                    <div class="card-footer text-center mt-3">
+                        <small>
+                            Already have an account?
+                            <a onclick="switchForm1()"
+                                style="color:blue;cursor:pointer;">
+                                Login here
+                            </a>
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row py-4" style="background-color:rgb(218,218,218);">
+
+        <div class="col-sm-4">
+            <div class="row text-center m-4">
+                Our online test platform is designed to boost your
+                confidence and success.
+                <br>
+                <b>"Test Yourself, Improve Yourself"</b>
+            </div>
+
+            <div class="row text-center">
+                <b>Links:</b>
+                <center>
+                    <i class="fa-brands fa-facebook fa-fade"></i>
+                    <i class="fa-brands fa-instagram fa-fade"></i>
+                    <i class="fa-brands fa-linkedin-in fa-fade"></i>
+                    <i class="fa-brands fa-x-twitter fa-fade"></i>
+                    <i class="fa-solid fa-globe fa-spin"></i>
+                </center>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="row px-5">
+                <h3 class="text-center">Quick Links</h3>
+                <hr>
+
+                <div class="col-sm-6 mt-4">
+                    <ul type="none">
+                        <li class="pt-3">
+                            <a href="index.html" class="text-decoration-none text-dark">
+                                <i class="fa-solid fa-house"></i> Home
+                            </a>
+                        </li>
+                        <li class="pt-3">
+                            <a href="about.html" class="text-decoration-none text-dark">About us</a>
+                        </li>
+                        <li class="pt-3">
+                            <a href="showque.html" class="text-decoration-none text-dark">Exam Center</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 mt-4">
+                    <ul type="none">
+                        <li class="pt-3">
+                            <a href="login.html" class="text-decoration-none text-dark">Register / Login</a>
+                        </li>
+                        <li class="pt-3">
+                            <a href="contact.html" class="text-decoration-none text-dark">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 pt-0 pb-3 px-5">
+            <div class="row text-center" style="width:80%;margin-left:10%;">
+                <h3>Our Company</h3>
+                <hr>
+
+                <div class="text-center mt-3">
+                    <h5>About</h5>
+                    <p>
+                        Our company <b>KeyZenX</b> provides you
+                        best learning in easy way because coding is not
+                        coding only error solving.
+                    </p>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"
+                        placeholder="example@gmail.com"
+                        style="border-top-left-radius:30px;border-bottom-left-radius:30px;">
+
+                    <button class="btn btn-info"
+                        style="border-top-right-radius:30px;border-bottom-right-radius:30px;">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row bg-dark" style="min-height:30px;">
+        <div class="col-sm-6 text-white text-center">
+            &copy;2025 All rights reserved
+        </div>
+
+        <div class="col-sm-6 text-white text-center fs-6">
+            Developed by-
+            <a href="developer.html" class="text-white text-decoration-none">
+                <b>Neetu R</b> 
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<button id="scrollTopBtn" onclick="scrollToTop()">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+
+    // Initially show Login form
+    $("#reg").hide();
+
+
+    // 1. Switch Forms
+
+    window.switchForm = function () {
+        $("#log").hide();
+        $("#reg").show();
+    };
+
+    window.switchForm1 = function () {
+        $("#reg").hide();
+        $("#log").show();
+    };
+
+
+    // 2. Registration Form
+
+    $("#registerForm").submit(function (event) {
+
+        event.preventDefault();
+
+        var name = $("#regName").val().trim();
+        var email = $("#regEmail").val().trim();
+        var password = $("#regPassword").val().trim();
+        var confirmPassword = $("#confirmPassword").val().trim();
+
+        var male = $("#male").is(":checked");
+        var female = $("#female").is(":checked");
+
+        $(".err").text("");
+
+        var status = true;
+
+        // Name Validation
+        if (name.length < 3 || !name.includes(" ")) {
+            $("#nameError").text("Please enter your full name");
+            status = false;
+        }
+
+        // Gender Validation
+        if (!male && !female) {
+            $("#genderError").text("Please choose your gender");
+            status = false;
+        }
+
+        // Email Validation
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            $("#emailError").text("Please enter a valid email");
+            status = false;
+        }
+
+        // Password Validation
+        if (password.length < 8 || password.length > 15) {
+            $("#passwordError").text("Password must be 8 to 15 characters");
+            status = false;
+        }
+
+        // Confirm Password
+        if (confirmPassword !== password) {
+            $("#confirmError").text("Passwords do not match");
+            status = false;
+        }
+
+        // Save Data
+        if (status == true) {
+
+            var user = {
+                name: name,
+                email: email,
+                password: password,
+                gender: male ? "Male" : "Female"
+            };
+
+            localStorage.setItem("NNT_User", JSON.stringify(user));
+
+            localStorage.removeItem("NNT_Login");
+
+            alert("Registration Successful! Please Login.");
+
+            $("#registerForm")[0].reset();
+
+            switchForm1();
+        }
+
+    });
+
+
+    // 3. Login Form
+
+    $("#loginForm").submit(function (event) {
+
+        event.preventDefault();
+
+        var email = $("#loginEmail").val().trim();
+        var password = $("#loginPassword").val().trim();
+
+        $("#loginEmailError").text("");
+        $("#loginPasswordError").text("");
+
+        var savedUser = localStorage.getItem("NNT_User");
+
+        if (savedUser == null) {
+            $("#loginPasswordError").text("Please register first");
+            return;
+        }
+
+        var user = JSON.parse(savedUser);
+
+        if (email === user.email && password === user.password) {
+
+            localStorage.setItem("NNT_Login", "true");
+
+            alert("Login Successful!");
+
+            window.location.href = "showque.html?id=1";
+
+        } else {
+
+            $("#loginPasswordError").text("Incorrect Email or Password");
+        }
+
+    });
+
+
+    // Scroll Button
+
+    $(window).scroll(function () {
+
+        if ($(window).scrollTop() > 100) {
+            $("#scrollTopBtn").fadeIn();
+        } else {
+            $("#scrollTopBtn").fadeOut();
+        }
+
+    });
+
+
+    //  Scroll to Top
+
+    window.scrollToTop = function () {
+
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500);
+
+    };
+
+});
+
+</script>
+
+</body>
+</html>
